@@ -22,6 +22,23 @@ public class ProductApplication implements CommandLineRunner {
 		Product product=new Product("Cooler","Navajeevan",5389.86);
 		
 		productService.addProduct(product);
+		
+
+		//get the product by ID
+		Product nproduct=productService.getById(1);
+		System.out.println(nproduct);
+		
+		//get all the product
+		List<Product>listProduct=productService.getAllProducts();
+		System.out.println(listProduct);
+		
+		//update by ID separately each segment
+		nproduct.setBrand("swathi");
+		nproduct.setPrice(1250.56);
+		
+		productService.updateProduct(nproduct);
+		
+		//dummy commit
 	}
 
 }
